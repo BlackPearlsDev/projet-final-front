@@ -1,7 +1,9 @@
 # TODO
 
 - (EN COURS) Le panel administateur avec toute la gestion du site. ❌
-Gestion des catégories en cours, les autres fonctionnalités sont à faire. ⚠️
+- Gestion des catégories ✔️
+- Gestion des produits ✔️
+- Gestion des utilisateurs ❌
 
 - Finir le panier en envoyant les données au serveur (faire le code) ❌
 
