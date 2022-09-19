@@ -508,7 +508,21 @@ footer a {
 /* ordi portable a partir de 1024px */
 @media screen and (min-width: 1024px) {
 
+    .productDetail {
+        width: 50%;
+        margin: 24px auto;
+    }
 
+    .productDetail img {
+        width: 50%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .btnAddCart {
+        width: auto;
+        margin: 20px auto;
+    }
 
 }
 
