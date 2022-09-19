@@ -1,9 +1,5 @@
+# UPDATED 19/09/2022
 # TODO
-
-- (EN COURS) Le panel administateur avec toute la gestion du site. ❌
-- Gestion des catégories ✔️
-- Gestion des produits ✔️
-- Gestion des utilisateurs ❌
 
 - Finir le panier en envoyant les données au serveur (faire le code) ❌
 
@@ -25,6 +21,12 @@
 - Page Register ✔️
 - Page Logout ✔️
 
+### Admin   
+- Le panel administateur avec toute la gestion du site. ✔️
+- Gestion des catégories ✔️
+- Gestion des produits ✔️
+- Gestion des utilisateurs ✔️
+
 ## Produits
 - Les produits sont récupérés depuis l'API et affichés sur la page magasin + ajout au panier. ✔️
 
@@ -42,5 +44,3 @@
 - Css mobile terminé. ✔️
 - Css tablette terminé. ✔️
 - Css desktop terminé. ✔️
-
-- Faire le CSS rajouté dernièrement sur le panel admin des Outlets (fais en version PC donc voir pour le mobile et tablette si ça passe). ⚠️
