@@ -48,7 +48,7 @@ function Panel({categories, products}) {
                 <nav className='navAdmin'>
                     <Link to="addProducts" onClick={handleToggle}>Gérer les produits</Link>
                     <Link to="addCategories" onClick={handleToggle}>Gérer les catégories</Link>
-                    <Link to="manageUsers">Gérer les utilisateurs</Link>
+                    <Link to="manageUsers" onClick={handleToggle}>Gérer les utilisateurs</Link>
                 </nav>
                 {toggleBtn && <Outlet />}
 

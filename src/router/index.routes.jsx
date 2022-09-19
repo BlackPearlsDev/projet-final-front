@@ -13,6 +13,7 @@ import Logout from "../Components/Pages/Entry/Logout/Index";
 import Admin from "../Components/Admin/Panel/Index";
 import AddProducts from "../Components/Admin/addProducts/Index";
 import AddCategories from "../Components/Admin/addCategories/Index";
+import ManageUsers from "../Components/Admin/manageUsers/Index";
 import NotFound from "../Components/Pages/NotFound/Index";
 
 function Router() {
@@ -36,6 +37,7 @@ function Router() {
             <Route path="admin" element={<HOC child={Admin} isAuthRequired={true}/>} >
                 <Route path="addProducts" element={<HOC child={AddProducts} isAuthRequired={true}/>} />
                 <Route path="addCategories" element={<HOC child={AddCategories} isAuthRequired={true}/>} />
+                <Route path="manageUsers" element={<HOC child={ManageUsers} isAuthRequired={true}/>} />
             </Route>
 
 

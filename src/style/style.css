@@ -387,6 +387,28 @@ form input[type="submit"] {
     margin: 10px;
 }
 
+.allUsersAdmin {
+    width: 100%;
+}
+
+.userLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.btnDeleteUser {
+    border: transparent;
+    border-radius: 5px;
+    background: crimson;
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 6px;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -524,6 +546,10 @@ footer a {
         margin: 20px auto;
     }
 
+    .userLine {
+        flex-direction: row;
+    }
+
 }
 
 /* ordi a partir de 1280px */
@@ -597,6 +623,15 @@ footer a {
     
     #formAddProduct {
         width: 70%;
+    }
+
+    .btnDeleteUser {
+        border: transparent;
+        border-radius: 5px;
+        background: crimson;
+        color: #fff;
+        font-size: 1.6rem;
+        padding: 6px;
     }
 }
 

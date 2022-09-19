@@ -6,21 +6,25 @@ const userSlice = createSlice({
     initialState: {
         userInfos: null,
         isLogged: false,
+        listUsers: [],
     },
     reducers: {
-        login(state, action){
+        login(state, action) {
             console.log(action)
             state.userInfos = action.payload;
             state.isLogged = true;
         },
-        logout(state){
+        logout(state) {
             state.userInfos = null;
             state.isLogged = false;
+        },
+        loadUsers(state, action) {
+            state.listUsers = [...action.payload];
         }
     },
 
 });
 
-export const {login, logout} = userSlice.actions;
+export const {login, logout, loadUsers} = userSlice.actions;
 
 export default userSlice.reducer;

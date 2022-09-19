@@ -43,42 +43,38 @@ function AddProducts({categories}) {
     }
 
     return (
-        <main>
-            <section className="mainContent">
-                <section className="toolsAdmin">
-                    <form onSubmit={handleSubmit} id="formAddProduct">
-                        <label htmlFor="title">Nom du produit</label>
-                        <input type="text" name="title" id="title" onChange={(e) => handleChange(e)}/>
+        <section className="toolsAdmin">
+            <form onSubmit={handleSubmit} id="formAddProduct">
+                <label htmlFor="title">Nom du produit</label>
+                <input type="text" name="title" id="title" onChange={(e) => handleChange(e)}/>
 
-                        <label htmlFor="description">Description</label>
-                        <textarea name="description" id="description" cols="30" rows="10" onChange={(e) => handleChange(e)}></textarea>
+                <label htmlFor="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="10" onChange={(e) => handleChange(e)}></textarea>
 
-                        <label htmlFor="image_name">Image</label>
-                        <input type="file" name="image_name" id="image_name" ref={fileInput} onChange={(e) => setProduct({...product, image_name: fileInput.current.files[0]})}/>
+                <label htmlFor="image_name">Image</label>
+                <input type="file" name="image_name" id="image_name" ref={fileInput} onChange={(e) => setProduct({...product, image_name: fileInput.current.files[0]})}/>
 
-                        <label htmlFor="quantityInStock">Quantité en stock</label>
-                        <input type="number" name="quantityInStock" id="quantityInStock" onChange={(e) => handleChange(e)}/>
+                <label htmlFor="quantityInStock">Quantité en stock</label>
+                <input type="number" name="quantityInStock" id="quantityInStock" onChange={(e) => handleChange(e)}/>
 
-                        <label htmlFor="price">Prix</label>
-                        <input type="number" name="price" id="price" onChange={(e) => handleChange(e)}/>
+                <label htmlFor="price">Prix</label>
+                <input type="number" name="price" id="price" onChange={(e) => handleChange(e)}/>
 
-                        <label htmlFor="category_id">Catégorie</label>
-                        <select name="category_id" id="category_id" onChange={(e) => handleChange(e)}>
-                            <option value="0">Choisir une catégorie</option>
-                            {
-                                categories.map((category) => {
-                                    return (
-                                        <option key={category.id} value={category.id}>{category.category_name}</option>
-                                    );
-                                })
-                            }
-                        </select>
+                <label htmlFor="category_id">Catégorie</label>
+                <select name="category_id" id="category_id" onChange={(e) => handleChange(e)}>
+                    <option value="0">Choisir une catégorie</option>
+                    {
+                        categories.map((category) => {
+                            return (
+                                <option key={category.id} value={category.id}>{category.category_name}</option>
+                            );
+                        })
+                    }
+                </select>
 
-                        <button type="submit" className='btnAdd marginElem'>Ajouter</button>
-                    </form>
-                </section>
-            </section>
-        </main>
+                <button type="submit" className='btnAdd marginElem'>Ajouter</button>
+            </form>
+        </section>
     )
 }
 

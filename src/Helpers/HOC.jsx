@@ -6,8 +6,10 @@ import { getCategories } from "../services/API/category";
 import Error from "../Components/Error";
 import { loadProducts } from "../store/slices/product.slice";
 import { loadCategories } from "../store/slices/category.slice";
+import { loadUsers } from "../store/slices/user.slice";
 import { checkToken } from "../services/API/user";
 import { login, logout } from '../store/slices/user.slice';
+import { getAll } from "../services/API/user";
 
 function HOC({ child, isAuthRequired }) {
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ function HOC({ child, isAuthRequired }) {
     const [fetchError, setFetchError] = useState(false);
     
     const dispatch = useDispatch();
-    const { list, userInfos, isLogged, listCategories } = useSelector((state) => ({...state.products, ...state.user, ...state.categories}));
+    const { list, userInfos, isLogged, listCategories, listUsers } = useSelector((state) => ({...state.products, ...state.user, ...state.categories, ...state.users}));
 
     useEffect(() => {
         if (!list.length) {
@@ -78,6 +80,20 @@ function HOC({ child, isAuthRequired }) {
         }
     }, [dispatch, listCategories.length]);
 
+    useEffect(() => {
+        if (!listUsers.length) {
+            async function fetchData() {
+                const res = await getAll();
+                if (res.code) {
+                    setFetchError(true);
+                    return;
+                }
+                dispatch(loadUsers(res.data.result));
+            }
+            fetchData();
+        }
+    }, [dispatch, listUsers.length]);
+
 
     const Child = child;
 
@@ -90,7 +106,7 @@ function HOC({ child, isAuthRequired }) {
             {!list.length ? (
                 <p>loading ...</p>
             ) : (
-                    <Child products={list} userInfos={userInfos} categories={listCategories}/>
+                    <Child products={list} userInfos={userInfos} categories={listCategories} listUsers={listUsers}/>
             )}
         </>
     );

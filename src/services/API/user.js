@@ -33,3 +33,21 @@ export const update = async (uuid, datas) => {
         return error.response;
     }
 }
+
+export const getAll = async () => {
+    try {
+        return await axios.get("/api/v1/user/all");
+    } catch (error) {
+        console.log(error);
+        return error.response;
+    }
+}
+
+export const remove = async (uuid) => {
+    try {
+        return await axios.delete(`/api/v1/user/${uuid}`);
+    } catch (error) {
+        console.log(error);
+        return error.response;
+    }
+}
