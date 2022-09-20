@@ -35,25 +35,25 @@ function Dashboard({userInfos}) {
                     <input type="email" id="email" value={userInfos?.email} disabled />
                     
                     <label htmlFor="alias">Alias</label>
-                    <input type="text" id="alias" value={inputs.alias} onChange={(e) => setInputs({...inputs, alias: e.target.value})} />
+                    <input type="text" id="alias" value={inputs.alias ? inputs.alias : "A remplir"} onChange={(e) => setInputs({...inputs, alias: e.target.value})} />
 
                     <label htmlFor="firstname">Prénom</label>
-                    <input type="text" id="firstname" value={inputs.firstname} onChange={(e) => setInputs({...inputs, firstname: e.target.value})} />
+                    <input type="text" id="firstname" value={inputs.firstname ? inputs.firstname : "A remplir"} onChange={(e) => setInputs({...inputs, firstname: e.target.value})} />
 
                     <label htmlFor="lastname">Nom</label>
-                    <input type="text" id="lastname" value={inputs.lastname} onChange={(e) => setInputs({...inputs, lastname: e.target.value})} />
+                    <input type="text" id="lastname" value={inputs.lastname ? inputs.lastname : "A remplir"} onChange={(e) => setInputs({...inputs, lastname: e.target.value})} />
 
                     <label htmlFor="address">Adresse</label>
-                    <input type="text" id="address" value={inputs.address} onChange={(e) => setInputs({...inputs, address: e.target.value})} />
+                    <input type="text" id="address" value={inputs.address ? inputs.address : "A remplir"} onChange={(e) => setInputs({...inputs, address: e.target.value})} />
 
                     <label htmlFor="zip">Code postal</label>
-                    <input type="number" id="zip" value={inputs.zip} onChange={(e) => setInputs({...inputs, zip: e.target.value})} />
+                    <input type="number" id="zip" value={inputs.zip ? inputs.zip : "00000"} onChange={(e) => setInputs({...inputs, zip: e.target.value})} />
 
                     <label htmlFor="city">Ville</label>
-                    <input type="text" id="city" value={inputs.city} onChange={(e) => setInputs({...inputs, city: e.target.value})} />
+                    <input type="text" id="city" value={inputs.city ? inputs.city : "A remplir"} onChange={(e) => setInputs({...inputs, city: e.target.value})} />
 
                     <label htmlFor="phone">Téléphone</label>
-                    <input type="tel" id="phone" value={inputs.phone} onChange={(e) => setInputs({...inputs, phone: e.target.value})} />
+                    <input type="tel" id="phone" value={inputs.phone ? inputs.phone : "A remplir"} onChange={(e) => setInputs({...inputs, phone: e.target.value})} />
                     
                     <input type="submit" value="Mettre à jour" />
 

@@ -75,7 +75,7 @@ function Cart({userInfos}) {
                     })}
                 </section>
                 <section className='cartTotal'>
-                    <p>Vous avez <span className='txtBlue'>{cart.length}</span> produits dans votre panier <span className='txtBlue'>{userInfos.firstname}</span>.</p>
+                    <p>Vous avez <span className='txtBlue'>{cart?.length}</span> produits dans votre panier <span className='txtBlue'>{userInfos.firstname}</span>.</p>
                     <button className='btnPurchase' onClick = {(e) => {handlePurchase(e)}} >Commander</button>
                 </section>
             </section>
