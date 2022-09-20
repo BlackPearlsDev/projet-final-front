@@ -1,6 +1,12 @@
-import { remove } from "../../../services/API/user";
+import { getAll, remove } from "../../../services/API/user";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loadUsers } from "../../../store/slices/user.slice";
 
 function ManageUsers({listUsers}) {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     
     const handleDelete = async (e, uuid) => {
         e.preventDefault();
@@ -9,7 +15,11 @@ function ManageUsers({listUsers}) {
         if(res.status === 404) {
 			console.log(res.data.msg);
 			return;
-		}
+		} else {
+            const res = await getAll();
+            if(res.status === 200) dispatch(loadUsers(res.data.result));
+            navigate("/admin/manageUsers");
+        }
     }
 
     return (

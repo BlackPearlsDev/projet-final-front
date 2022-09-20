@@ -31,8 +31,8 @@ function HOC({ child, isAuthRequired }) {
             }
             fetchData();
         } 
-    }, [dispatch, list.length]);
-    // }, []); // DEFAULT
+        // eslint-disable-next-line
+    }, []);
 
     useEffect(()=>{
         async function checkAuth(){
@@ -63,8 +63,8 @@ function HOC({ child, isAuthRequired }) {
             }
         }
         checkAuth();
-    }, [dispatch, isLogged, isAuthRequired, navigate]);
-    // }, []); // DEFAULT
+        // eslint-disable-next-line
+    }, []);
 
     useEffect(() => {
         if (!listCategories.length) {
@@ -78,7 +78,8 @@ function HOC({ child, isAuthRequired }) {
             }
             fetchData();
         }
-    }, [dispatch, listCategories.length]);
+        // eslint-disable-next-line
+    }, []);
 
     useEffect(() => {
         if (!listUsers.length) {
@@ -92,7 +93,8 @@ function HOC({ child, isAuthRequired }) {
             }
             fetchData();
         }
-    }, [dispatch, listUsers.length]);
+        // eslint-disable-next-line
+    }, []);
 
 
     const Child = child;
